@@ -85,6 +85,56 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
       if (this.nextFreq === true) {
         this.speedTendancy = frequencies[Math.floor(Math.random()*frequencies.length)]
       }
+    },
+    hdgMessage(){
+      if (this.hdg !== undefined){
+        switch (this.turnDir){
+          case '+':
+            return `turn right heading ${this.hdg}`
+            break;
+          case '-':
+            return `turn left heading ${this.hdg}`
+            break;
+          default :
+            return 'continue present heading'
+        }
+      } else return ''
+    },
+    levelchangeMessage(){
+      if (this.level !== undefined){
+        switch(this.vertTendancy){
+          case '+':
+            return `climb flight level ${this.level}`
+            break;
+          case '-':
+            return  `descend flight level ${this.level}`
+            break;
+          case '=':
+            return `maintain flight level ${this.level}`
+        }
+      } else return ''
+    },
+    speedChangeMessage(){
+      if (this.speed !== undefined){
+        switch (this.speedTendancy){
+          case '+':
+            return `Keep Mach number ${machNb} minimum`;
+            break;
+          case '-':
+            return `Fly Mach number ${machNb} or less`;
+            break;
+          default :
+            return `Keep ${machNb} exactly`;
+        }
+      } else return ''
+    },
+    frequencyChangeMessage(){
+      if (this.nextfreq !== undefined) {
+        return `call ${nextfreq[0]}, ${nextfreq[1]}, bye bye`
+      } else return ''
+    },
+    transmit(callsign){
+      console.log(`${callsign} ${this.hdgMessage()} ${this.levelchangeMessage()} ${this. speedChangeMessage()} ${this.frequencyChangeMessage()}.`)
     }
   }
 };
@@ -136,5 +186,12 @@ console.log(randomMach());
 console.log(ranndomNextSector());
 */
 const type = instType();
+console.log(type);
 const clairance = randomClairance(type);
+clairance.fleshOut()
 console.log(clairance);
+console.log(clairance.hdgMessage());
+console.log(clairance.levelchangeMessage());
+console.log(clairance.speedChangeMessage());
+console.log(clairance.frequencyChangeMessage());
+clairance.transmit('AFR1456');
