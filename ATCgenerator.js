@@ -74,7 +74,7 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
     nextfreq,
     fleshOut(){
       if (this.hdg !== undefined){
-        this.turndir = possibleTendancy[Math.floor(Math.random()*3)]
+        this.turnDir = possibleTendancy[Math.floor(Math.random()*3)]
       }
       if (this.level !== undefined) {
         this.vertTendancy = possibleTendancy[Math.floor(Math.random()*3)]
@@ -95,7 +95,7 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
           case '-':
             return `, Turn left heading ${this.hdg}`
             break;
-          default :
+          default:
             return ', Continue present heading'
         }
       } else return ''
@@ -123,7 +123,7 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
           case '-':
             return `, Fly Mach number ${this.speed} or less`;
             break;
-          default :
+          case '=':
             return `, Keep ${this.speed} exactly`;
         }
       } else return ''
@@ -200,4 +200,5 @@ const aircraft = 'AFR146K'
 const type = instType();
 const clairance = randomClairance(type);
 clairance.fleshOut();
+console.log(clairance);
 clairance.transmit(aircraft);
