@@ -1,7 +1,7 @@
 //Data storing
 const callsign = 'AFR146K'
 const instructionType = ['hdg','level','speed','shoot'];
-const frequencies = [['Bordeaux',122.415],['Bordeaux',118.430],['Bordeaux',135.115],['Brest',134.240],['Paris',132.265],['Madrid',127.830],['Marseille',132.365],['Bordeaux',132.990]];
+const frequencies = [['Bordeaux',132.315],['Bordeaux',128.430],['Bordeaux',125.115],['Brest',136.250],['Paris',126.125],['Madrid',125.840],['Marseille',115.365],['Bordeaux',122.590]];
 const possibleTendancy = ['+','=','-'];
 
 //generate random parameters(spd,hdg,fl)
