@@ -18,7 +18,7 @@ function randomHDG(){
 };
 
 function randomMach(){
-  let pointdec = Math.floor(Math.random()*2+6) / 10
+  let pointdec = (Math.floor(Math.random()*2)+6) / 10
   let pointmil = Math.floor(Math.random()*10) / 100
   let machNb = pointdec + pointmil
   return machNb
@@ -56,7 +56,7 @@ function randomClairance(typeArray){
     level = randomFL()
   }
   if (typeArray.indexOf('speed') !== -1) {
-    machNb = randomMach()
+    speed = randomMach()
   }
   if (typeArray.indexOf('shoot') !== -1) {
     sector = ranndomNextSector()
@@ -90,13 +90,13 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
       if (this.hdg !== undefined){
         switch (this.turnDir){
           case '+':
-            return `turn right heading ${this.hdg}`
+            return `, Turn right heading ${this.hdg}`
             break;
           case '-':
-            return `turn left heading ${this.hdg}`
+            return `, Turn left heading ${this.hdg}`
             break;
           default :
-            return 'continue present heading'
+            return ', Continue present heading'
         }
       } else return ''
     },
@@ -104,13 +104,13 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
       if (this.level !== undefined){
         switch(this.vertTendancy){
           case '+':
-            return `climb flight level ${this.level}`
+            return `, Climb flight level ${this.level}`
             break;
           case '-':
-            return  `descend flight level ${this.level}`
+            return  `, Descend flight level ${this.level}`
             break;
           case '=':
-            return `maintain flight level ${this.level}`
+            return `, Maintain flight level ${this.level}`
         }
       } else return ''
     },
@@ -118,23 +118,23 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
       if (this.speed !== undefined){
         switch (this.speedTendancy){
           case '+':
-            return `Keep Mach number ${machNb} minimum`;
+            return `, Keep Mach number ${this.speed} minimum`;
             break;
           case '-':
-            return `Fly Mach number ${machNb} or less`;
+            return `, Fly Mach number ${this.speed} or less`;
             break;
           default :
-            return `Keep ${machNb} exactly`;
+            return `, Keep ${this.speed} exactly`;
         }
       } else return ''
     },
     frequencyChangeMessage(){
       if (this.nextfreq !== undefined) {
-        return `call ${nextfreq[0]}, ${nextfreq[1]}, bye bye`
+        return `, Call ${nextfreq[0]}, ${nextfreq[1]}, bye bye`
       } else return ''
     },
     transmit(callsign){
-      console.log(`${callsign} ${this.hdgMessage()} ${this.levelchangeMessage()} ${this. speedChangeMessage()} ${this.frequencyChangeMessage()}.`)
+      console.log(`${callsign}${this.hdgMessage()}${this.levelchangeMessage()}${this. speedChangeMessage()}${this.frequencyChangeMessage()}.`)
     }
   }
 };
@@ -184,7 +184,7 @@ console.log(randomFL());
 console.log(randomHDG());
 console.log(randomMach());
 console.log(ranndomNextSector());
-*/
+
 const type = instType();
 console.log(type);
 const clairance = randomClairance(type);
@@ -195,3 +195,9 @@ console.log(clairance.levelchangeMessage());
 console.log(clairance.speedChangeMessage());
 console.log(clairance.frequencyChangeMessage());
 clairance.transmit('AFR1456');
+*/
+const aircraft = 'AFR146K'
+const type = instType();
+const clairance = randomClairance(type);
+clairance.fleshOut();
+clairance.transmit(aircraft);
