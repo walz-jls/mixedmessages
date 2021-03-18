@@ -1,0 +1,36 @@
+body {
+  background: linear-gradient(90deg,#c9c9c9,#ffffff);
+  max-width: 960px;
+  margin: auto;
+}
+
+h1 {
+  color: black;
+  font-family: Georgia;
+  text-align: center;
+  font-size: 26px;
+}
+
+p {
+  font-size: 18px;
+  text-align: left;
+}
+.avatar {
+  width: 50px;
+  float: left;
+  box-shadow: 2px 2px 2px 0px #3F3F3F;
+}
+
+.example {
+  width: 960px;
+  border-color: black;
+  border-width: thick;
+}
+
+.creds {
+  font-family: Helvetica;
+  color: #8f9491;
+  float: left;
+  font-size: 14px;
+  padding-left: 10px;
+}
