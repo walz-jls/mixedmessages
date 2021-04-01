@@ -6,7 +6,7 @@ body {
 
 header {
   border-radius: 5px;
-  background-color: #4874b8;
+  background-color: SteelBlue;
   padding: 15px;
 }
 
@@ -17,15 +17,25 @@ h1 {
   font-size: 26px;
 }
 
-main, footer {
+main {
   margin-top:0px;
-  background-color: mintcream;
+  background-color: LightSteelBlue;
   padding:5px
 }
 
-.execute {
-  margin-right: auto;
-  margin-left: auto;
+footer {
+  padding-top: 15px;
+  background-color: SteelBlue;
+}
+
+.button-center {
+  text-align: center;
+}
+
+button {
+  padding: 1%;
+  margin: 2%;
+  width: 25%;
 }
 
 .image figcaption {
