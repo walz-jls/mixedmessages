@@ -134,7 +134,7 @@ function clairanceFactory(hdg,level,speed,nextfreq) {
       } else return ''
     },
     transmit(callsign){
-      console.log(`${callsign}${this.hdgMessage()}${this.levelchangeMessage()}${this. speedChangeMessage()}${this.frequencyChangeMessage()}.`)
+      return (`${callsign}${this.hdgMessage()}${this.levelchangeMessage()}${this. speedChangeMessage()}${this.frequencyChangeMessage()}.`)
     }
   }
 };
@@ -144,7 +144,15 @@ function speakMessage(aircraft){
   const msgComponents = instType()
   const msg = randomClairance(msgComponents)
   msg.fleshOut()
-  msg.transmit(aircraft)
+  return msg.transmit(aircraft)
 };
 
-speakMessage(callsign);
+//speakMessage(callsign);
+
+//html integration
+
+const button = document.querySelector('button');
+button.onclick = function () {
+  let resultdiv = document.querySelector('.message-container')
+  resultdiv.innerHTML = speakMessage(callsign)
+};

@@ -4,33 +4,53 @@
   <head>
     <title>ATC message generator</title>
     <link href="./content/style.css" type="text/css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   </head>
 
   <body>
 
-    <header>
-      <h1>ATC message generator</h1>
-    </header>
+    <nav class="site-wide-nav">
+      <ul>
+        <li><a id="atc">ATC message generator</a></li>
+        <li><a id="css">HTML & CSS Cheatsheet</a></li>
+        <li><a id="websys">Website Design Guidelines</a></li>
+        <li><a id="about">About</a></li>
+      </ul>
+    </nav>
 
-    <main>
-      <p>This webpage was built as a fun HTML, GIT and javascript learning project.</p>
-      <p>This script generates a random Air Traffic Control instruction, as would be issued by an operator to the pilot of an aircraft.</p>
-      <figure class="image">
-        <figcaption>Errato Air traffic control System</figcaption>
-      </figure>
-      <figure class="audiofeed">
-        <audio controls src='http://d.liveatc.net/lfbd_bordeaux'>Feed not supported</audio>
-        <figcaption>Live ATC feed of Bordeaux Regional ATC</figcaption>
-      </figure>
-      <div class="button-center">
-        <button class="execute" onclick="./content/ATCgenerator.js">Execute</button>
-      </div>
-    </main>
+    <div class="site-container">
+      <header>
+        <h1>ATC message generator</h1>
+      </header>
 
-    <footer>
-      <img src="./content/avatar.jpg" alt="" class="avatar"/>
-      <p class='creds'>Created by walz-jls</p>
-    </footer>
+      <main>
+        <p>This webpage was built as a fun HTML, GIT and javascript learning project.</p>
+        <p>This script generates a random Air Traffic Control instruction, as would be issued by an operator to the pilot of an aircraft.</p>
+        <figure class="image">
+          <figcaption>Errato Air traffic control System</figcaption>
+        </figure>
+        <figure class="audiofeed">
+          <audio controls src='http://d.liveatc.net/lfbd_bordeaux'>Feed not supported</audio>
+          <figcaption>Live ATC feed of Bordeaux Regional ATC</figcaption>
+        </figure>
+        <div class="message-container">
+        </div>
+        <div class="button-center">
+          <button id="execute">Execute</button>
+        </div>
+      </main>
+
+      <footer>
+        <img src="./content/avatar.jpg" alt="" class="avatar"/>
+        <p class='creds'>Created by walz-jls</p>
+      </footer>
+
+    </div>
+
+
+    <script src="./content/ATCgenerator.js">
+    </script>
 
   </body>
 </html>

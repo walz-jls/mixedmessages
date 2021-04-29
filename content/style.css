@@ -2,6 +2,7 @@ body {
   background-color: white;
   max-width: 960px;
   margin: auto;
+  font-family: Roboto;
 }
 
 header {
@@ -12,20 +13,42 @@ header {
 
 h1 {
   color: black;
-  font-family: Georgia;
+  font-family: Merriweather;
   text-align: center;
   font-size: 26px;
 }
 
 main {
   margin-top:0px;
-  background-color: LightSteelBlue;
+  background-color: WhiteSmoke;
   padding:5px
 }
 
 footer {
   padding-top: 15px;
   background-color: SteelBlue;
+}
+
+nav {
+  background-color: WhiteSmoke;
+  text-align: right;
+  position:fixed;
+  width: 960px;
+  z-index: 5;
+}
+
+.site-wide-nav ul{
+  margin: 0;
+  padding: 0;
+}
+.site-wide-nav li {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid Navy;
+  }
+
+.site-wide-nav a {
+  display: block;
 }
 
 .button-center {
@@ -36,6 +59,11 @@ button {
   padding: 1%;
   margin: 2%;
   width: 25%;
+}
+
+.site-container {
+  position:relative;
+  top: 41px;
 }
 
 .image figcaption {
@@ -49,8 +77,13 @@ button {
 
 .audiofeed {
   text-align: center;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+}
+
+.message-container {
+  text-align: center;
+  font-family: 'Fira Mono';
+  margin: 20px;
 }
 
 p {
@@ -61,12 +94,6 @@ p {
   width: 50px;
   float: left;
   box-shadow: 2px 2px 2px 0px #3F3F3F;
-}
-
-.example {
-  width: 960px;
-  border-color: black;
-  border-width: thick;
 }
 
 .creds {
