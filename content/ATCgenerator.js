@@ -1,5 +1,5 @@
 //Data storing
-const callsign = 'AFR146K'
+let callsign = 'AFR146K'
 const instructionType = ['hdg','level','speed','shoot'];
 const frequencies = [['Bordeaux',132.315],['Bordeaux',128.430],['Bordeaux',125.115],['Brest',136.250],['Paris',126.125],['Madrid',125.840],['Marseille',115.365],['Bordeaux',122.590]];
 const possibleTendancy = ['+','=','-'];
